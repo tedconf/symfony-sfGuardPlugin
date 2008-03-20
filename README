@@ -35,6 +35,8 @@ a configurable plugin.
   * Load default fixtures (optional - it creates a superadmin user)
 
     {{{
+      cp plugins/sfGuardPlugin/data/fixtures/fixtures.yml.sample data/fixtures/sfGuard.yml
+
       symfony propel-load-data
     }}}
 
