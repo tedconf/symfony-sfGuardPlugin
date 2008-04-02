@@ -28,9 +28,9 @@
   <email>francois.zaninotto@symfony-project.com</email>
   <active>yes</active>
  </developer>
- <date>2007-11-14</date>
+ <date>2007-04-02</date>
  <version>
-   <release>1.1.13</release>
+   <release>1.1.14</release>
    <api>1.1.0</api>
  </version>
  <stability>
@@ -53,7 +53,7 @@
      <dir name="data">
        <dir name="fixtures">
          <!-- fixtures -->
-         <file role="data" name="fixtures.yml" />
+         <file role="data" name="fixtures.yml.sample" />
        </dir>
 
        <dir name="tasks">
