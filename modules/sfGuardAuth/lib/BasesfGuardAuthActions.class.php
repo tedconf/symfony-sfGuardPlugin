@@ -45,7 +45,7 @@ class BasesfGuardAuthActions extends sfActions
 
       if (!$user->hasAttribute('referer'))
       {
-        $user->setAttribute('referer', $this->getRequest()->getReferer());
+        $user->setAttribute('referer', $this->getRequest()->getUri());
       }
 
       if ($this->getModuleName() != ($module = sfConfig::get('sf_login_module')))
