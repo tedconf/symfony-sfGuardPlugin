@@ -376,6 +376,7 @@ You can change the redirect values in `app.yml`:
 
 === 1.1.14 PRE ===
 
+ * fabien: fixed schema for IPv6 (#3626)
  * fabien: [BREAKS BC] renamed app_sfGuardPlugin_routes_register to app_sf_guard_plugin_routes_register (#2562)
  * fabien: added HTTP status code 401 when coming from a XMLHTTPRequest (#2469)
  * fabien: fixed HTTP status code for secure (403) and signin (401) actions (#2545)
