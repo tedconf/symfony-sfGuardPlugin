@@ -375,6 +375,7 @@ You can change the redirect values in `app.yml`:
 
 === 2.1.0-PRE ===
 
+  * fabien: added the user object as a third parameter when calling the `app_sf_guard_plugin_check_password_callable` callable (#3231)
   * fabien: fixed `isSuperAdmin()` method (#2719)
   * fabien: fixed schema for IPv6 (#3626)
   * fabien: fixed typo (#3501)
