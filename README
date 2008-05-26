@@ -375,6 +375,7 @@ You can change the redirect values in `app.yml`:
 
 === 2.1.0-PRE ===
 
+  * fabien: fixed `isSuperAdmin()` method (#2719)
   * fabien: fixed schema for IPv6 (#3626)
   * fabien: fixed typo (#3501)
   * fabien: added forms (migrated sfGuardAuth)
