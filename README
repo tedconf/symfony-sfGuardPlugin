@@ -373,6 +373,8 @@ You can change the redirect values in `app.yml`:
 
 == Changelog ==
 
+=== 2.2.0 ===
+
 === 2.1.0-PRE ===
 
   * fabien: optimized getAllPermissions() number of database requests (#3238)
