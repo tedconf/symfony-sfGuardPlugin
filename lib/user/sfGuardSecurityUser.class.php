@@ -136,7 +136,7 @@ class sfGuardSecurityUser extends sfBasicSecurityUser
         // the user does not exist anymore in the database
         $this->signOut();
 
-        throw new sfException('The user does exist anymore in the database.');
+        throw new sfException('The user does not exist anymore in the database.');
       }
     }
 
