@@ -36,7 +36,7 @@ class sfGuardSecurityUser extends sfBasicSecurityUser
 
   public function isSuperAdmin()
   {
-    return $this->getGuardUser()->getIsSuperAdmin();
+    return $this->getGuardUser() ? $this->getGuardUser()->getIsSuperAdmin() : false;
   }
 
   public function isAnonymous()
