@@ -239,7 +239,7 @@ class PluginsfGuardUser extends BasesfGuardUser
 
       foreach ($this->getGroups() as $group)
       {
-        foreach ($group->getsfGuardGroupPermissions() as $gp)
+        foreach ($group->getsfGuardGroupPermissionsJoinsfGuardPermission() as $gp)
         {
           $permission = $gp->getsfGuardPermission();
 
