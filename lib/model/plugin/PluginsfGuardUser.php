@@ -270,14 +270,14 @@ class PluginsfGuardUser extends BasesfGuardUser
     {
       if ($profile = $this->getProfile())
       {
-        $profile->delete();
+        $profile->delete($con);
       }
     }
     catch (sfException $e)
     {
     }
 
-    return parent::delete();
+    return parent::delete($con);
   }
 
   public function setPasswordHash($v)
