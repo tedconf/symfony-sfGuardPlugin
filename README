@@ -387,7 +387,9 @@ You can change the signin form used by the `sfGuardAuth` module in `app.yml`:
 
 === 2.1.0-PRE ===
 
-  * fabien: added sf_guard_plugin_signin_form configuration
+  * fabien: fixed `guard:promote` task
+  * fabien: added `guard:add-permission` and `guard:add-group` tasks
+  * fabien: added `sf_guard_plugin_signin_form` configuration
   * fabien: optimized getAllPermissions() number of database requests (#3238)
   * fabien: added the user object as a third parameter when calling the `app_sf_guard_plugin_check_password_callable` callable (#3231)
   * fabien: fixed `isSuperAdmin()` method (#2719)
