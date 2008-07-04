@@ -366,6 +366,16 @@ You can change the redirect values in `app.yml`:
         success_signout_url:     module/action         # the plugin use the referer as default
   }}}
 
+== Configure the signin form ==
+
+You can change the signin form used by the `sfGuardAuth` module in `app.yml`:
+
+  {{{
+    all:
+      sf_guard_plugin:
+        signin_form:    sfGuardFormSigninCustom
+  }}}
+
 == TODO ==
 
   * finish the `getPassword` method
@@ -377,6 +387,7 @@ You can change the redirect values in `app.yml`:
 
 === 2.1.0-PRE ===
 
+  * fabien: added sf_guard_plugin_signin_form configuration
   * fabien: optimized getAllPermissions() number of database requests (#3238)
   * fabien: added the user object as a third parameter when calling the `app_sf_guard_plugin_check_password_callable` callable (#3231)
   * fabien: fixed `isSuperAdmin()` method (#2719)
