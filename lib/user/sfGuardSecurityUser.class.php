@@ -17,7 +17,20 @@
  */
 class sfGuardSecurityUser extends sfBasicSecurityUser
 {
-  private $user = null;
+  protected
+    $user = null;
+
+  public function initialize($context, $parameters = array())
+  {
+    parent::initialize($context, $parameters);
+
+    if (!$this->isAuthenticated())
+    {
+      // remove user if timeout
+      $this->getAttributeHolder()->removeNamespace('sfGuardSecurityUser');
+      $this->user = null;
+    }
+  }
 
   public function hasCredential($credential, $useAnd = true)
   {

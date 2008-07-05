@@ -376,6 +376,8 @@ You can change the redirect values in `app.yml`:
 
 === 1.1.16 PRE ===
 
+  * fabien: fixed authorization removal when the session timeout
+
 === 1.1.15 ===
 
   * fabien: optimized getAllPermissions() number of database requests (#3238)
