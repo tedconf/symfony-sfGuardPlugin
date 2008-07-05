@@ -17,7 +17,20 @@
  */
 class sfGuardSecurityUser extends sfBasicSecurityUser
 {
-  private $user = null;
+  protected
+    $user = null;
+
+  public function initialize(sfEventDispatcher $dispatcher, sfStorage $storage, $options = array())
+  {
+    parent::initialize($dispatcher, $storage, $options);
+
+    if (!$this->isAuthenticated())
+    {
+      // remove user if timeout
+      $this->getAttributeHolder()->removeNamespace('sfGuardSecurityUser');
+      $this->user = null;
+    }
+  }
 
   public function getReferer($default)
   {
