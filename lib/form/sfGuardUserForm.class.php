@@ -9,6 +9,9 @@
  */
 class sfGuardUserForm extends BasesfGuardUserForm
 {
+  protected
+    $pkName = null;
+
   public function configure()
   {
     unset(
@@ -36,6 +39,7 @@ class sfGuardUserForm extends BasesfGuardUserForm
     if (class_exists($profileFormClass))
     {
       $profileForm = new $profileFormClass();
+      unset($profileForm[$this->getPrimaryKey()]);
       unset($profileForm[sfConfig::get('app_sf_guard_plugin_profile_field_name', 'user_id')]);
 
       $this->mergeForm($profileForm);
@@ -50,6 +54,7 @@ class sfGuardUserForm extends BasesfGuardUserForm
     if (!is_null($profile = $this->getProfile()))
     {
       $values = $this->getValues();
+      unset($values[$this->getPrimaryKey()]);
 
       $profile->fromArray($values, BasePeer::TYPE_FIELDNAME);
       $profile->save();
@@ -65,14 +70,17 @@ class sfGuardUserForm extends BasesfGuardUserForm
     // update defaults for profile
     if (!is_null($profile = $this->getProfile()))
     {
+      $values = $profile->toArray(BasePeer::TYPE_FIELDNAME);
+      unset($values[$this->getPrimaryKey()]);
+
       // update defaults for the main object
       if ($this->isNew)
       {
-        $this->setDefaults(array_merge($profile->toArray(BasePeer::TYPE_FIELDNAME), $this->getDefaults()));
+        $this->setDefaults(array_merge($values, $this->getDefaults()));
       }
       else
       {
-        $this->setDefaults(array_merge($this->getDefaults(), $profile->toArray(BasePeer::TYPE_FIELDNAME)));
+        $this->setDefaults(array_merge($this->getDefaults(), $values));
       }
     }
   }
@@ -87,6 +95,27 @@ class sfGuardUserForm extends BasesfGuardUserForm
     {
       // no profile
       return null;
+    }
+  }
+
+  protected function getPrimaryKey()
+  {
+    if (!is_null($this->pkName))
+    {
+      return $this->pkName;
+    }
+
+    $profileClass = sfConfig::get('app_sf_guard_plugin_profile_class', 'sfGuardUserProfile');
+    if (class_exists($profileClass))
+    {
+      $tableMap = call_user_func(array($profileClass.'Peer', 'getTableMap'));
+      foreach ($tableMap->getColumns() as $column)
+      {
+        if ($column->isPrimaryKey())
+        {
+          return $this->pkName = call_user_func(array($profileClass.'Peer', 'translateFieldname'), $column->getPhpName(), BasePeer::TYPE_PHPNAME, BasePeer::TYPE_FIELDNAME);
+        }
+      }
     }
   }
 }

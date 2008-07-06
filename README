@@ -387,6 +387,7 @@ You can change the signin form used by the `sfGuardAuth` module in `app.yml`:
 
 === 2.1.0-PRE ===
 
+  * fabien: customized sfGuardUserForm with sensible defaults
   * fabien: fixed authorization removal when the session timeout
   * fabien: fixed `guard:promote` task
   * fabien: added `guard:add-permission` and `guard:add-group` tasks
