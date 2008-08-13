@@ -135,6 +135,7 @@
          <file role="data" name="lib/BasesfGuardUserActions.class.php" />
          <file role="data" name="templates/_password.php" />
          <file role="data" name="templates/_password_bis.php" />
+         <file role="data" name="templates/_groups.php" />
          <file role="data" name="validate/edit.yml" />
        </dir>
      </dir>
