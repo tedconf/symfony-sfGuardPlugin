@@ -14,23 +14,23 @@
   <name>Jason IBELE</name>
   <user>draven</user>
   <email></email>
-  <active>yes</active>
+  <active>no</active>
  </lead>
  <lead>
   <name>Dave DASH</name>
   <user>davedash</user>
   <email>dd-symfony@davedash.com</email>
-  <active>yes</active>
+  <active>no</active>
  </lead>
  <developer>
   <name>Francois Zaninotto</name>
   <user>fzaninotto</user>
   <email>francois.zaninotto@symfony-project.com</email>
-  <active>yes</active>
+  <active>no</active>
  </developer>
- <date>2008-05-26</date>
+ <date>2008-08-14</date>
  <version>
-   <release>1.1.15</release>
+   <release>1.1.16</release>
    <api>1.1.0</api>
  </version>
  <stability>
@@ -163,6 +163,82 @@
  <phprelease>
  </phprelease>
 
- <changelog>
- </changelog>
+  <changelog>
+    <release>
+      <version>
+        <release>1.1.16</release>
+        <api>1.1.0</api>
+      </version>
+      <stability>
+       <release>stable</release>
+       <api>stable</api>
+      </stability>
+      <license uri="http://www.symfony-project.com/license">MIT license</license>
+      <date>2008-08-14</date>
+      <license>MIT</license>
+      <notes>
+  * tom@punkave.com: added a group filter
+  * fabien: fixed authorization removal when the session timeout
+      </notes>
+    </release>
+    <release>
+      <version>
+        <release>1.1.15</release>
+        <api>1.1.0</api>
+      </version>
+      <stability>
+       <release>stable</release>
+       <api>stable</api>
+      </stability>
+      <license uri="http://www.symfony-project.com/license">MIT license</license>
+      <date>2008-05-26</date>
+      <license>MIT</license>
+      <notes>
+  * fabien: optimized getAllPermissions() number of database requests (#3238)
+  * fabien: added the user object as a third parameter when calling the `app_sf_guard_plugin_check_password_callable` callable (#3231)
+  * fabien: fixed `isSuperAdmin()` method (#2719)
+  * fabien: fixed schema for IPv6 (#3626)
+      </notes>
+    </release>
+    <release>
+      <version>
+        <release>1.1.14</release>
+        <api>1.1.0</api>
+      </version>
+      <stability>
+       <release>stable</release>
+       <api>stable</api>
+      </stability>
+      <license uri="http://www.symfony-project.com/license">MIT license</license>
+      <date>2008-04-02</date>
+      <license>MIT</license>
+      <notes>
+  * fabien: [BREAKS BC] renamed app_sfGuardPlugin_routes_register to app_sf_guard_plugin_routes_register (#2562)
+  * fabien: added HTTP status code 401 when coming from a XMLHTTPRequest (#2469)
+  * fabien: fixed HTTP status code for secure (403) and signin (401) actions (#2545)
+      </notes>
+    </release>
+    <release>
+      <version>
+        <release>1.1.13</release>
+        <api>1.1.0</api>
+      </version>
+      <stability>
+       <release>stable</release>
+       <api>stable</api>
+      </stability>
+      <license uri="http://www.symfony-project.com/license">MIT license</license>
+      <date>2008-02-26</date>
+      <license>MIT</license>
+      <notes>
+  * fabien: fixed isAnonymous() method (#2484)
+  * frederic: added PluginsfGuardUser::setPasswordHash() to be able to change the password hash directly (useful when loading fixtures)
+  * fabien: updated documentation about creating the new tables (#2476)
+  * fabien: added the BasesfGuardAuthActions inclusion when extending the sfGuardAuth class (#2296)
+  * francois: fixed indexes on unique columns were not unique
+  * francois: switched to YAML schema, to allow overriding by way of sfPropelAlternativeSchemaPlugin
+  * francois: added `lib/model/plugin/` classes to make the model truly extensible
+      </notes>
+    </release>
+  </changelog>
 </package>
