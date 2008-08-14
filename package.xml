@@ -28,9 +28,9 @@
   <email>francois.zaninotto@symfony-project.com</email>
   <active>yes</active>
  </developer>
- <date>2008-05-26</date>
+ <date>2008-08-14</date>
  <version>
-   <release>2.1.0</release>
+   <release>2.2.0</release>
    <api>1.1.0</api>
  </version>
  <stability>
@@ -173,6 +173,50 @@
  <phprelease>
  </phprelease>
 
- <changelog>
- </changelog>
+  <changelog>
+    <release>
+      <version>
+        <release>2.2.0</release>
+        <api>1.1.0</api>
+      </version>
+      <stability>
+       <release>stable</release>
+       <api>stable</api>
+      </stability>
+      <license uri="http://www.symfony-project.com/license">MIT license</license>
+      <date>2008-08-14</date>
+      <license>MIT</license>
+      <notes>
+        * tom@punkave.com: added a group filter
+        * fabien: customized sfGuardUserForm with sensible defaults
+        * fabien: fixed authorization removal when the session timeout
+      </notes>
+    </release>
+    <release>
+      <version>
+        <release>2.1.0</release>
+        <api>1.1.0</api>
+      </version>
+      <stability>
+       <release>stable</release>
+       <api>stable</api>
+      </stability>
+      <license uri="http://www.symfony-project.com/license">MIT license</license>
+      <date>2008-05-26</date>
+      <license>MIT</license>
+      <notes>
+        * fabien: fixed `guard:promote` task
+        * fabien: added `guard:add-permission` and `guard:add-group` tasks
+        * fabien: added `sf_guard_plugin_signin_form` configuration
+        * fabien: optimized getAllPermissions() number of database requests (#3238)
+        * fabien: added the user object as a third parameter when calling the `app_sf_guard_plugin_check_password_callable` callable (#3231)
+        * fabien: fixed `isSuperAdmin()` method (#2719)
+        * fabien: fixed schema for IPv6 (#3626)
+        * fabien: fixed typo (#3501)
+        * fabien: added forms (migrated sfGuardAuth)
+        * fabien: added guard:create_user and guard:promote tasks
+        * dwhittle: fixed remember me
+      </notes>
+    </release>
+  </changelog>
 </package>
