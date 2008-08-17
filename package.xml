@@ -26,11 +26,11 @@
   <name>Francois Zaninotto</name>
   <user>fzaninotto</user>
   <email>francois.zaninotto@symfony-project.com</email>
-  <active>yes</active>
+  <active>no</active>
  </developer>
- <date>2008-08-14</date>
+ <date>2008-08-17</date>
  <version>
-   <release>2.2.0</release>
+   <release>2.2.1</release>
    <api>1.1.0</api>
  </version>
  <stability>
@@ -174,6 +174,22 @@
  </phprelease>
 
   <changelog>
+    <release>
+      <version>
+        <release>2.2.1</release>
+        <api>1.1.0</api>
+      </version>
+      <stability>
+       <release>stable</release>
+       <api>stable</api>
+      </stability>
+      <license uri="http://www.symfony-project.com/license">MIT license</license>
+      <date>2008-08-17</date>
+      <license>MIT</license>
+      <notes>
+        * fabien: fixed redirects after login
+      </notes>
+    </release>
     <release>
       <version>
         <release>2.2.0</release>

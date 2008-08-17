@@ -37,15 +37,12 @@ class sfGuardSecurityUser extends sfBasicSecurityUser
     $referer = $this->getAttribute('referer', $default);
     $this->getAttributeHolder()->remove('referer');
 
-    return $referer;
+    return $referer ? $referer : $default;
   }
 
   public function setReferer($referer)
   {
-    if (!$this->hasAttribute('referer'))
-    {
-      $this->setAttribute('referer', $referer);
-    }
+    $this->setAttribute('referer', $referer);
   }
 
   public function hasCredential($credential, $useAnd = true)
