@@ -28,6 +28,12 @@
   <email>francois.zaninotto@symfony-project.com</email>
   <active>no</active>
  </developer>
+ <developer>
+  <name>Kris Wallsmith</name>
+  <user>Kris.Wallsmith</user>
+  <email>kris.wallsmith@symfony-project.com</email>
+  <active>yes</active>
+ </developer>
  <date>2008-08-17</date>
  <version>
    <release>2.2.1</release>
