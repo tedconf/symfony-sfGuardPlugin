@@ -34,6 +34,11 @@ class sfGuardSecurityUser extends sfBasicSecurityUser
 
   public function hasCredential($credential, $useAnd = true)
   {
+    if (empty($credential))
+    {
+      return true;
+    }
+
     if (!$this->getGuardUser())
     {
       return false;
