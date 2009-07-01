@@ -20,6 +20,15 @@ class BasesfGuardAuthActions extends sfActions
   public function executeSignin()
   {
     $user = $this->getUser();
+
+    if ($this->getRequest()->isXmlHttpRequest())
+    {
+      $this->getResponse()->setHeaderOnly(true);
+      $this->getResponse()->setStatusCode(401);
+
+      return sfView::NONE;
+    }
+
     if ($this->getRequest()->getMethod() == sfRequest::POST)
     {
       // always redirect to a URL set in app.yml
@@ -37,14 +46,6 @@ class BasesfGuardAuthActions extends sfActions
     }
     else
     {
-      if ($this->getRequest()->isXmlHttpRequest())
-      {
-        $this->getResponse()->setHeaderOnly(true);
-        $this->getResponse()->setStatusCode(401);
-
-        return sfView::NONE;
-      }
-
       // if we have been forwarded, then the referer is the current URL
       // if not, this is the referer of the current request
       $user->setAttribute('referer', $this->getContext()->getActionStack()->getSize() > 1 ? $this->getRequest()->getUri() : $this->getRequest()->getReferer());
